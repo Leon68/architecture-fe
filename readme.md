@@ -11,8 +11,10 @@ a boilerplate for fe architecture
 - vue/react 框架
 # file structure
 
+```
 |- src
 |-|- app
 |-|- components
 |-|- global
 |-|-|- reset.css
+```
