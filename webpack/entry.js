@@ -1,3 +1,3 @@
 module.exports = {
-  entry: './sale.js'  
+    sale: './app/sale.js',
 }
