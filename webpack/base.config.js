@@ -1,6 +1,7 @@
 const path = require('path')
 const entry = require('./entry')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 module.exports = {
     context: path.resolve(process.cwd(), "src"),
     entry: entry,
@@ -14,7 +15,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/ 
+                exclude: /node_modules/
             },
             {
                 test: /\.css$/,
@@ -25,11 +26,17 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: 'sass-loader',
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ['css-loader', 'sass-loader']
+                }),
             },
             {
                 test: /\.less$/,
-                loader: 'less-loader',
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: ['css-loader', 'less-loader']
+                }),
             },
             {
                 test: /\.(png|jpg|jpeg|gif|woff|woff2|ttf|eot|svg|swf)$/,
@@ -41,6 +48,12 @@ module.exports = {
         ]
     },
     plugins: [
-        new ExtractTextPlugin("styles.css"),
+        new ExtractTextPlugin("css/[name].css"),
+        new HtmlWebpackPlugin({
+                title: 'sale',
+                template: path.resolve(process.cwd(), "src/base/webpack.template.html"),
+            filename: 'sale'
+        }
+        )
     ]
 }

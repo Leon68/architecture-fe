@@ -4,7 +4,7 @@
   "description": "a boilerplate for fe architecture",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --config webpack/base.config.js",
+    "dev": "webpack-dev-server --config webpack/base.config.js",
     "babel": "babel src/app -d dist",
     "pro": ""
   },
