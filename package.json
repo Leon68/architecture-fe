@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --config webpack/base.config.js",
+    "watch": "webpack --config webpack/base.config.js",
     "babel": "babel src/app -d dist",
     "pro": ""
   },
