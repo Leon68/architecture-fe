@@ -4,6 +4,7 @@
   "description": "a boilerplate for fe architecture",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "dev": "webpack-dev-server --config webpack/base.config.js",
     "watch": "webpack --config webpack/base.config.js",
     "babel": "babel src/app -d dist",
@@ -33,6 +34,8 @@
     "less-loader": "^4.0.5",
     "node-sass": "^4.6.0",
     "pre-commit": "^1.2.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
     "ts-jest": "^21.2.3",
