@@ -10,10 +10,13 @@ module.exports = {
         path: path.resolve(process.cwd(), "dist"),
         filename: "[name].js",
     },
+    resolve: {
+        extensions: [".js", ".json",".jsx"]
+    },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/
             },
@@ -50,10 +53,8 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin("css/[name].css"),
         new HtmlWebpackPlugin({
-                title: 'sale',
                 template: "base/webpack.template.html",
-                chunks: ['sale'],
-                filename: 'sale.html'
+                inject: true
             }
         )
     ]

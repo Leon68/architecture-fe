@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "dev": "webpack-dev-server --config webpack/dev.config.js",
-    "pro": "webpack --config webpack/prod.config.js --optimize-minimize"
+    "prod": "webpack --config webpack/prod.config.js --optimize-minimize"
   },
   "keywords": [],
   "author": "leon",
