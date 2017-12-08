@@ -5,12 +5,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 module.exports = {
     context: path.resolve(process.cwd(), "src"),
     entry: entry,
-    watch: true,
-    devServer: {
-        contentBase: path.join(process.cwd(), "sample"),
-        compress: true,
-        port: 9000
-    },
     output: {
         publicPath: "/dist",
         path: path.resolve(process.cwd(), "dist"),
@@ -48,7 +42,7 @@ module.exports = {
                 test: /\.(png|jpg|jpeg|gif|woff|woff2|ttf|eot|svg|swf)$/,
                 loader: "file-loader",
                 options: {
-                    name: 'assets/[name]_[sha512:hash:base64:7].[ext]'
+                    name: '/assets/[name]_[sha512:hash:base64:7].[ext]'
                 },
             },
         ]

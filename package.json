@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "dev": "webpack-dev-server --config webpack/base.config.js",
-    "watch": "webpack --config webpack/base.config.js",
-    "babel": "babel src/app -d dist",
-    "pro": ""
+    "dev": "webpack-dev-server --config webpack/dev.config.js",
+    "pro": "webpack --config webpack/prod.config.js --optimize-minimize"
   },
   "keywords": [],
   "author": "leon",
